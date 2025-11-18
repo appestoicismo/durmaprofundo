@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Sono Profundo - Desligue sua mente em 8 minutos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1488669398982000');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1488669398982000&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
+    <style>
+        /* Estilo "Direct Response" - Focado na Leitura e Ação */
+        :root { --primary: #1e293b; --accent: #ef4444; --text: #334155; --bg: #f8fafc; }
+        * { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; padding: 0; }
+        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        
+        /* Headline que Agarra pela Garganta */
+        .headline-box { background: #0f172a; color: white; padding: 40px 20px; text-align: center; }
+        .pre-head { color: #fbbf24; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        h1 { font-size: 2.5rem; margin: 10px 0; line-height: 1.1; font-weight: 900; }
+        .sub-head { font-size: 1.2rem; color: #cbd5e1; font-weight: 400; margin-top: 15px; }
+
+        /* Corpo da Carta de Vendas */
+        .content { background: white; padding: 40px 20px; margin-top: -20px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
+        .bold-red { color: var(--accent); font-weight: 700; }
+        
+        /* Fascinations (Bullets) */
+        .bullets { background: #f1f5f9; padding: 30px 20px; border-left: 5px solid var(--accent); margin: 30px 0; }
+        .bullets h3 { margin-top: 0; }
+        .bullets li { margin-bottom: 15px; list-style: none; font-weight: 600; padding-left: 0; }
+        .bullets li:before { content: "✓"; color: var(--accent); margin-right: 10px; font-weight: 900; }
+
+        /* Godfather Offer Box */
+        .offer-box { border: 3px dashed var(--primary); padding: 30px 20px; text-align: center; background: #fffbeb; margin: 40px 0; border-radius: 8px; }
+        .offer-box h2 { margin-top: 0; }
+        .price-old { text-decoration: line-through; color: #94a3b8; font-size: 1.2rem; display: block; margin: 10px 0; }
+        .price-new { font-size: 3rem; font-weight: 900; color: var(--accent); display: block; margin: 10px 0; line-height: 1; }
+        .price-installment { font-size: 1.1rem; color: #64748b; margin: 10px 0; }
+        
+        /* CTA Button */
+        .cta-button { 
+            background: #16a34a; 
+            color: white; 
+            display: block; 
+            width: 100%; 
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px; 
+            text-align: center; 
+            font-size: 1.3rem; 
+            font-weight: 900; 
+            text-decoration: none; 
+            border-radius: 50px;
+            box-shadow: 0 5px 0 #14532d;
+            transition: transform 0.1s;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:active { transform: translateY(4px); box-shadow: 0 1px 0 #14532d; }
+        .guarantee { text-align: center; margin-top: 10px; font-size: 0.9rem; color: #64748b; }
+
+        /* About Section */
+        .about-section { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; }
+        .about-section img { width: 150px; border-radius: 50%; border: 4px solid #e2e8f0; margin: 20px 0; }
+
+        /* Footer */
+        .footer { background: #0f172a; color: #cbd5e1; padding: 40px 20px; text-align: center; margin-top: 60px; }
+        .footer-title { font-size: 1.5rem; font-weight: 900; color: white; margin-bottom: 20px; }
+        .footer-info { margin: 10px 0; font-size: 0.95rem; }
+        .footer-disclaimer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #334155; font-size: 0.85rem; line-height: 1.6; color: #94a3b8; }
+
+        /* Mobile Fix */
+        @media(max-width: 600px) { 
+            h1 { font-size: 1.8rem; } 
+            .content { padding: 20px 15px; } 
+            .price-new { font-size: 2.5rem; }
+            .cta-button { font-size: 1.1rem; padding: 18px; }
+            .bullets { padding: 20px 15px; }
+            .offer-box { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="headline-box">
+        <div class="pre-head">Atenção: Para quem rola na cama até as 3 da manhã</div>
+        <h1>Como "Desligar" Sua Mente em 8 Minutos e Dormir Como Uma Pedra</h1>
+        <div class="sub-head">Sem pílulas tarja preta, sem meditação chata e sem contar carneirinhos. Apenas neurociência aplicada.</div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <p>Caro amigo(a) insone,</p>
+            <p>Se você está lendo isso, provavelmente sabe como é a tortura de ver o sol nascer sem ter pregado o olho.</p>
+            <p>O problema não é o seu colchão. O problema é que o seu cérebro está preso no modo "LUTA OU FUGA". Ele acha que você está em perigo, por isso não deixa você apagar.</p>
+            <p>Você precisa de um comando de segurança. Uma chave mestra que diz ao seu subconsciente: <span class="bold-red">"É seguro desligar agora."</span></p>
+            
+            <h3>Apresentando: O Protocolo Hipnótico de Sono Profundo</h3>
+            <p>Isso não é uma "meditação guiada" qualquer do YouTube. É uma sessão de engenharia mental projetada para derrubar suas barreiras de resistência.</p>
+
+            <div class="bullets">
+                <h3>O que você vai experimentar hoje à noite:</h3>
+                <ul>
+                    <li>Como silenciar o "Rádio Mental" que não para de falar sobre seus problemas em menos de 120 segundos.</li>
+                    <li>A técnica do "Escaneamento Reverso" que relaxa músculos que você nem sabia que estavam tensos.</li>
+                    <li>Como acordar amanhã sentindo que dormiu por 10 horas, mesmo que tenha dormido 6.</li>
+                    <li>O fim da ansiedade noturna: deite na cama sorrindo, não temendo.</li>
+                </ul>
+            </div>
+
+            <!-- CTA Intermediário -->
+            <a href="https://pay.hotmart.com/E101811999C?off=tzbt6j59&checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">QUERO DORMIR HOJE ➔</a>
+
+            <div class="offer-box">
+                <h2>Oferta Por Tempo Limitado</h2>
+                <p>Não pague R$ 350,00 por uma sessão de terapia.</p>
+                <span class="price-old">Valor Normal: R$ 197,00</span>
+                <span class="price-new">R$ 37,90</span>
+                <p class="price-installment">ou em 2x de R$ 19,95* no cartão</p>
+                <a href="https://pay.hotmart.com/E101811999C?off=tzbt6j59&checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">QUERO ACESSO IMEDIATO ➔</a>
+                <p class="guarantee">🔒 7 Dias de Garantia Incondicional. Ou você dorme, ou nós devolvemos seu dinheiro.</p>
+            </div>
+
+            <div class="about-section">
+                <h3>Veja Como é o Aplicativo Por Dentro</h3>
+                <img src="https://durmaprofundo.dantashipnoterapia.com.br/pordentro.png" alt="Interface do Aplicativo de Auto Hipnose" style="width: 100%; max-width: 600px; border-radius: 12px; border: 2px solid #e2e8f0;">
+                <p>Interface simples e intuitiva. Aperte o play, deite na cama e deixe o protocolo fazer o trabalho pesado. Funciona até para quem nunca fez hipnose na vida.</p>
+            </div>
+
+            <!-- CTA Final -->
+            <a href="https://pay.hotmart.com/E101811999C?off=tzbt6j59&checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">GARANTIR MINHA VAGA AGORA ➔</a>
+
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <div class="footer-title">AppAutoHipnose</div>
+        <div class="footer-info">CNPJ: 40.678.175/0001-77</div>
+        <div class="footer-info">Responsável: Hipnoterapeuta Alex Andreoli Dantas</div>
+        <div class="footer-info">WhatsApp: (19) 97401-0028</div>
+        <div class="footer-info">E-mail: <a href="contato@appestoicismo.com.br" class="__cf_email__" data-cfemail="f89b97968c998c97b89988889d8b8c97919b918b9597d69b9795d69a8a">[contato@appestoicismo.com.br]</a></div>
+        
+        <div class="footer-disclaimer">
+            Este produto não substitui acompanhamento médico
