@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protocolo Sono Profundo - Desligue sua mente em 8 minutos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Protocolo Sono Profundo | Durma em 8 Minutos</title>
     
-    <!-- Meta Pixel Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -22,143 +26,479 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1488669398982000&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code -->
-    
     <style>
-        /* Estilo "Direct Response" - Focado na Leitura e Ação */
-        :root { --primary: #1e293b; --accent: #ef4444; --text: #334155; --bg: #f8fafc; }
-        * { box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; padding: 0; }
-        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
-        
-        /* Headline que Agarra pela Garganta */
-        .headline-box { background: #0f172a; color: white; padding: 40px 20px; text-align: center; }
-        .pre-head { color: #fbbf24; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
-        h1 { font-size: 2.5rem; margin: 10px 0; line-height: 1.1; font-weight: 900; }
-        .sub-head { font-size: 1.2rem; color: #cbd5e1; font-weight: 400; margin-top: 15px; }
+        /* --- Variáveis e Reset --- */
+        :root {
+            --bg-dark: #0B1120;
+            --bg-card: #1e293b;
+            --primary: #3b82f6;
+            --accent: #F59E0B; /* Dourado para destaque */
+            --success: #10b981; /* Verde vibrante para CTA */
+            --text-light: #f8fafc;
+            --text-dim: #94a3b8;
+            --text-dark: #1e293b;
+            --font-head: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
 
-        /* Corpo da Carta de Vendas */
-        .content { background: white; padding: 40px 20px; margin-top: -20px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        p { margin-bottom: 20px; font-size: 1.1rem; }
-        .bold-red { color: var(--accent); font-weight: 700; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         
-        /* Fascinations (Bullets) */
-        .bullets { background: #f1f5f9; padding: 30px 20px; border-left: 5px solid var(--accent); margin: 30px 0; }
-        .bullets h3 { margin-top: 0; }
-        .bullets li { margin-bottom: 15px; list-style: none; font-weight: 600; padding-left: 0; }
-        .bullets li:before { content: "✓"; color: var(--accent); margin-right: 10px; font-weight: 900; }
+        body {
+            font-family: var(--font-body);
+            background-color: #f8fafc;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-        /* Godfather Offer Box */
-        .offer-box { border: 3px dashed var(--primary); padding: 30px 20px; text-align: center; background: #fffbeb; margin: 40px 0; border-radius: 8px; }
-        .offer-box h2 { margin-top: 0; }
-        .price-old { text-decoration: line-through; color: #94a3b8; font-size: 1.2rem; display: block; margin: 10px 0; }
-        .price-new { font-size: 3rem; font-weight: 900; color: var(--accent); display: block; margin: 10px 0; line-height: 1; }
-        .price-installment { font-size: 1.1rem; color: #64748b; margin: 10px 0; }
-        
-        /* CTA Button */
-        .cta-button { 
-            background: #16a34a; 
-            color: white; 
-            display: block; 
-            width: 100%; 
-            max-width: 500px;
-            margin: 20px auto;
-            padding: 20px; 
-            text-align: center; 
-            font-size: 1.3rem; 
-            font-weight: 900; 
-            text-decoration: none; 
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; }
+
+        /* --- Utilitários --- */
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .text-center { text-align: center; }
+        .highlight { color: var(--accent); }
+        .bold { font-weight: 700; }
+        .flex-center { display: flex; align-items: center; justify-content: center; }
+
+        /* --- Header / Hero Section (Dark Mode com Imagem) --- */
+        header {
+            /* Fundo de fallback caso a imagem não carregue */
+            background-color: #0f172a;
+            /* Duas camadas: um gradiente escuro por cima da imagem para garantir contraste do texto */
+            background-image: 
+                linear-gradient(to bottom, rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.95)),
+                url('https://images.unsplash.com/photo-1503435400439-986e0b2ba603?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'); /* Imagem de lua/noite */
+            background-size: cover;
+            background-position: center center;
+            color: var(--text-light);
+            padding: 60px 0 80px;
+            position: relative;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        .pre-headline {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+            padding: 8px 16px;
             border-radius: 50px;
-            box-shadow: 0 5px 0 #14532d;
-            transition: transform 0.1s;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            border: none;
+            margin-bottom: 20px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        h1 {
+            font-family: var(--font-head);
+            font-size: 2.8rem;
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 20px;
+            /* Texto branco sólido para máximo contraste com o fundo estrelado */
+            color: #ffffff; 
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .sub-headline {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9); /* Branco com leve transparência */
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 400;
+        }
+
+        .payment-methods-hero {
+            margin-top: 15px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            gap: 8px;
+        }
+        .payment-methods-hero i { color: var(--accent); }
+
+        /* --- Card Principal de Conteúdo --- */
+        .main-content {
+            margin-top: -50px; /* Efeito de sobreposição */
+            position: relative;
+            z-index: 10;
+            padding-bottom: 40px;
+        }
+
+        .white-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 40px -5px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .story-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #334155;
+        }
+
+        .alert-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            color: #991b1b;
+        }
+
+        /* --- Seção de Benefícios (Grid) --- */
+        .benefits-section {
+            background-color: #f1f5f9;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 40px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .benefit-item:hover { transform: translateY(-2px); }
+
+        .benefit-item i {
+            font-size: 24px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .benefit-item strong { display: block; color: var(--text-dark); margin-bottom: 4px; }
+        .benefit-item span { font-size: 0.95rem; color: #64748b; }
+
+        /* --- App Showcase --- */
+        .app-showcase {
+            text-align: center;
+            padding: 40px 20px;
+            background: #0f172a;
+            color: white;
+            border-radius: 24px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-showcase img {
+            border-radius: 16px;
+            border: 6px solid #334155;
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.3);
+            margin: 20px auto;
+            max-width: 100%;
+            width: 500px;
+        }
+
+        /* --- Offer Card (Godfather Offer) --- */
+        .offer-card {
+            border: 2px solid var(--accent);
+            background: linear-gradient(to bottom, #ffffff, #fffbeb);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            margin-top: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-transform: uppercase;
+        }
+
+        .price-container { margin: 25px 0; }
+        .old-price { color: #94a3b8; text-decoration: line-through; font-size: 1.2rem; display: block; }
+        .new-price { 
+            color: #1e293b; 
+            font-size: 3.5rem; 
+            font-weight: 800; 
+            font-family: var(--font-head);
+            line-height: 1;
+            display: block;
+            margin: 10px 0;
+        }
+        .installments { color: #64748b; font-size: 1rem; background: #f1f5f9; display: inline-block; padding: 5px 15px; border-radius: 50px; }
+
+        /* --- CTA Button Styles --- */
+        .btn-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #16a34a, #15803d);
+            color: white;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 18px 30px;
+            border-radius: 12px;
+            border-bottom: 4px solid #14532d;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
             cursor: pointer;
         }
-        .cta-button:active { transform: translateY(4px); box-shadow: 0 1px 0 #14532d; }
-        .guarantee { text-align: center; margin-top: 10px; font-size: 0.9rem; color: #64748b; }
 
-        /* About Section */
-        .about-section { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; }
-        .about-section img { width: 150px; border-radius: 50%; border: 4px solid #e2e8f0; margin: 20px 0; }
+        .btn-cta:active {
+            transform: translateY(4px);
+            border-bottom: 0;
+            margin-bottom: 4px;
+        }
 
-        /* Footer */
-        .footer { background: #0f172a; color: #cbd5e1; padding: 40px 20px; text-align: center; margin-top: 60px; }
-        .footer-title { font-size: 1.5rem; font-weight: 900; color: white; margin-bottom: 20px; }
-        .footer-info { margin: 10px 0; font-size: 0.95rem; }
-        .footer-disclaimer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #334155; font-size: 0.85rem; line-height: 1.6; color: #94a3b8; }
+        .btn-text { font-size: 1.3rem; font-weight: 800; text-transform: uppercase; font-family: var(--font-head); }
+        .btn-sub { font-size: 0.85rem; font-weight: 400; opacity: 0.9; margin-top: 4px; }
 
-        /* Mobile Fix */
-        @media(max-width: 600px) { 
-            h1 { font-size: 1.8rem; } 
-            .content { padding: 20px 15px; } 
-            .price-new { font-size: 2.5rem; }
-            .cta-button { font-size: 1.1rem; padding: 18px; }
-            .bullets { padding: 20px 15px; }
-            .offer-box { padding: 20px 15px; }
+        /* Pulse Animation */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(22, 163, 74, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+        }
+        .pulse { animation: pulse-green 2s infinite; }
+
+        /* --- Guarantee Section --- */
+        .guarantee-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px dashed #cbd5e1;
+            margin-top: 30px;
+            text-align: left;
+        }
+        .guarantee-icon { font-size: 3rem; }
+        
+        /* --- Trust Elements in Offer --- */
+        .trust-elements {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+        }
+        .trust-icons {
+             font-size: 1.5rem;
+             gap: 15px;
+             margin-top: 10px;
+             color: #475569;
+        }
+
+
+        /* --- Footer --- */
+        footer {
+            background: var(--bg-dark);
+            color: #64748b;
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 0.9rem;
+        }
+        footer a { color: #94a3b8; text-decoration: underline; }
+
+        /* --- Sticky Mobile CTA --- */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: none; /* Hidden by default, shown via JS or Media Query */
+            border-top: 1px solid #e2e8f0;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .white-card { padding: 25px 20px; }
+            .guarantee-box { flex-direction: column; text-align: center; }
+            
+            /* Mostrar Sticky CTA apenas no Mobile */
+            .sticky-cta { display: block; }
+            /* Ajuste para o footer não ficar escondido pelo botão fixo */
+            footer { padding-bottom: 100px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="headline-box">
-        <div class="pre-head">Atenção: Para quem rola na cama até as 3 da manhã</div>
-        <h1>Como "Desligar" Sua Mente em 8 Minutos e Dormir Como Uma Pedra</h1>
-        <div class="sub-head">Sem pílulas tarja preta, sem meditação chata e sem contar carneirinhos. Apenas neurociência aplicada.</div>
-    </div>
+    <header>
+        <div class="container text-center">
+            <div class="pre-headline">⚠️ Atenção: Para quem rola na cama até as 3 da manhã</div>
+            <h1>Como "Desligar" Sua Mente em 8 Minutos e Dormir Como Uma Pedra</h1>
+            <p class="sub-headline">Sem pílulas, sem meditação chata e sem contar carneirinhos. Apenas neurociência aplicada para ativar seu "botão de desligar".</p>
+            
+            <a href="https://pay.hotmart.com/E101811999C?off=tzbt6j59&checkoutMode=10" class="btn-cta pulse" onclick="fbq('track', 'InitiateCheckout');">
+                <span class="btn-text">Quero Dormir Hoje ➔</span>
+                <span class="btn-sub">Acesso Imediato ao Protocolo</span>
+            </a>
+            
+            <div class="payment-methods-hero flex-center">
+                <i class="ph-fill ph-pix-logo"></i>
+                <i class="ph-fill ph-credit-card"></i>
+                <span>Aceitamos Pix e Cartão</span>
+            </div>
+        </div>
+    </header>
 
     <div class="container">
-        <div class="content">
-            <p>Caro amigo(a) insone,</p>
-            <p>Se você está lendo isso, provavelmente sabe como é a tortura de ver o sol nascer sem ter pregado o olho.</p>
-            <p>O problema não é o seu colchão. O problema é que o seu cérebro está preso no modo "LUTA OU FUGA". Ele acha que você está em perigo, por isso não deixa você apagar.</p>
-            <p>Você precisa de um comando de segurança. Uma chave mestra que diz ao seu subconsciente: <span class="bold-red">"É seguro desligar agora."</span></p>
+        <div class="main-content">
             
-            <h3>Apresentando: O Protocolo Hipnótico de Sono Profundo</h3>
-            <p>Isso não é uma "meditação guiada" qualquer do YouTube. É uma sessão de engenharia mental projetada para derrubar suas barreiras de resistência.</p>
+            <div class="white-card story-text">
+                <p><strong>Caro amigo(a) insone,</strong></p>
+                <p>Se você está lendo isso, provavelmente sabe como é a tortura silenciosa de ver o sol nascer sem ter pregado o olho sequer um minuto.</p>
+                
+                <div class="alert-box">
+                    <strong>O Erro Comum:</strong> Você acha que o problema é o colchão, o travesseiro ou o café que tomou tarde demais. Mas a verdade é mais profunda.
+                </div>
 
-            <div class="bullets">
-                <h3>O que você vai experimentar hoje à noite:</h3>
-                <ul>
-                    <li>Como silenciar o "Rádio Mental" que não para de falar sobre seus problemas em menos de 120 segundos.</li>
-                    <li>A técnica do "Escaneamento Reverso" que relaxa músculos que você nem sabia que estavam tensos.</li>
-                    <li>Como acordar amanhã sentindo que dormiu por 10 horas, mesmo que tenha dormido 6.</li>
-                    <li>O fim da ansiedade noturna: deite na cama sorrindo, não temendo.</li>
-                </ul>
+                <p>O problema real é que o seu cérebro está preso no modo <strong>"LUTA OU FUGA"</strong>. Ele acha que você está em perigo, por isso inunda seu corpo de cortisol e adrenalina, impedindo que você "apague".</p>
+                <p>Você precisa de um comando de segurança. Uma chave mestra biológica que diz ao seu subconsciente: <span style="color: var(--primary); font-weight: 700; background: #eff6ff; padding: 2px 5px; border-radius: 4px;">"É seguro desligar agora."</span></p>
+
+                <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 40px 0;">
+
+                <h2 class="text-center" style="font-family: var(--font-head); margin-bottom: 20px; color: var(--text-dark);">O Protocolo Hipnótico de Sono Profundo</h2>
+                <p class="text-center" style="max-width: 600px; margin: 0 auto;">Isso não é uma "meditação guiada" qualquer do YouTube. É uma sessão de engenharia mental projetada para derrubar suas barreiras de resistência.</p>
+
+                <div class="benefits-section">
+                    <h3 class="text-center" style="margin-bottom: 20px; font-size: 1.3rem;">O que você vai experimentar hoje à noite:</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <i class="ph ph-speaker-high"></i>
+                            <div>
+                                <strong>Silencie o Rádio Mental</strong>
+                                <span>Pare a voz interna que fala dos seus problemas em menos de 120 segundos.</span>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="ph ph-body"></i>
+                            <div>
+                                <strong>Escaneamento Reverso</strong>
+                                <span>Técnica que relaxa instantaneamente músculos que você nem sabia que estavam tensos.</span>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="ph ph-battery-charging"></i>
+                            <div>
+                                <strong>Recarga Total</strong>
+                                <span>Acorde sentindo que dormiu 10 horas, mesmo que tenha dormido apenas 6.</span>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="ph ph-smiley"></i>
+                            <div>
+                                <strong>Fim da Ansiedade Noturna</strong>
+                                <span>Volte a sentir prazer em deitar na cama, e não medo da insônia.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-showcase">
+                    <h3 style="font-family: var(--font-head); margin-bottom: 10px; font-size: 1.5rem;">Veja o Aplicativo Por Dentro</h3>
+                    <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">Interface simples. Aperte o play, bloqueie a tela e durma.</p>
+                    <img src="https://durmaprofundo.dantashipnoterapia.com.br/telalogin.png" alt="App Sono Profundo">
+                    <p style="margin-top: 20px; font-weight: 600; color: #60a5fa;">Funciona mesmo se você nunca fez hipnose.</p>
+                </div>
+
+                <div class="offer-card" id="oferta">
+                    <div class="badge">Oferta Por Tempo Limitado</div>
+                    
+                    <h2 style="font-family: var(--font-head); color: var(--text-dark);">Acesso Vitalício ao Protocolo</h2>
+                    <p style="color: #64748b; margin-top: 10px;">Não pague R$ 350,00 por uma única sessão de terapia.</p>
+                    
+                    <div class="price-container">
+                        <span class="old-price">De R$ 197,00</span>
+                        <span class="new-price">R$ 37,90</span>
+                        <span class="installments">ou 2x de R$ 19,95 no cartão</span>
+                    </div>
+
+                    <a href="https://pay.hotmart.com/E101811999C?off=tzbt6j59&checkoutMode=10" class="btn-cta pulse" onclick="fbq('track', 'InitiateCheckout');">
+                        <span class="btn-text">Sim! Quero Dormir Agora ➔</span>
+                        <span class="btn-sub">Compra Segura & Acesso Imediato</span>
+                    </a>
+
+                    <div class="guarantee-box">
+                        <div class="guarantee-icon">🔒</div>
+                        <div>
+                            <strong style="display: block; color: var(--text-dark); margin-bottom: 5px;">Risco Zero: 7 Dias de Garantia</strong>
+                            <span style="color: #64748b; font-size: 0.9rem;">Teste por uma semana inteira. Se você não dormir melhor, nós devolvemos 100% do seu dinheiro. Sem perguntas.</span>
+                        </div>
+                    </div>
+
+                    <div class="trust-elements">
+                        <p style="font-size: 0.9rem; margin-bottom: 10px; font-weight: 600; color: #334155;">Pagamento Seguro: Aceitamos Pix e Cartão</p>
+                        <div class="trust-icons flex-center">
+                            <i class="ph-fill ph-pix-logo" title="Pix"></i>
+                            <i class="ph-fill ph-credit-card" title="Cartão de Crédito"></i>
+                            <i class="ph-fill ph-lock-key" title="Ambiente Seguro"></i>
+                            <i class="ph-fill ph-shield-check" title="Garantia Hotmart"></i>
+                        </div>
+                         <p style="font-size: 0.8rem; margin-top: 10px;">Processado com segurança pela Hotmart</p>
+                    </div>
+                </div>
+
             </div>
-
-            <!-- CTA Intermediário -->
-            <a href="https://pay.hotmart.com/E101811999C?off=tzbt6j59&checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">QUERO DORMIR HOJE ➔</a>
-
-            <div class="offer-box">
-                <h2>Oferta Por Tempo Limitado</h2>
-                <p>Não pague R$ 350,00 por uma sessão de terapia.</p>
-                <span class="price-old">Valor Normal: R$ 197,00</span>
-                <span class="price-new">R$ 37,90</span>
-                <p class="price-installment">ou em 2x de R$ 19,95* no cartão</p>
-                <a href="https://pay.hotmart.com/E101811999C?off=tzbt6j59&checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">QUERO ACESSO IMEDIATO ➔</a>
-                <p class="guarantee">🔒 7 Dias de Garantia Incondicional. Ou você dorme, ou nós devolvemos seu dinheiro.</p>
-            </div>
-
-            <div class="about-section">
-                <h3>Veja Como é o Aplicativo Por Dentro</h3>
-                <img src="https://durmaprofundo.dantashipnoterapia.com.br/telalogin.png" alt="Interface do Aplicativo de Auto Hipnose" style="width: 100%; max-width: 600px; border-radius: 12px; border: 2px solid #e2e8f0;">
-                <p>Interface simples e intuitiva. Aperte o play, deite na cama e deixe o protocolo fazer o trabalho pesado. Funciona até para quem nunca fez hipnose na vida.</p>
-            </div>
-
-            <!-- CTA Final -->
-            <a href="https://pay.hotmart.com/E101811999C?off=tzbt6j59&checkoutMode=10" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">GARANTIR MINHA VAGA AGORA ➔</a>
-
         </div>
     </div>
 
-    <!-- RODAPÉ -->
-    <footer class="footer">
-        <div class="footer-title">AppAutoHipnose</div>
-        <div class="footer-info">CNPJ: 40.678.175/0001-77</div>
-        <div class="footer-info">Responsável: Hipnoterapeuta Alex Andreoli Dantas</div>
-        <div class="footer-info">WhatsApp: (19) 97401-0028</div>
-        <div class="footer-info">E-mail: <a href="contato@appestoicismo.com.br" class="__cf_email__" data-cfemail="f89b97968c998c97b89988889d8b8c97919b918b9597d69b9795d69a8a">[contato@appestoicismo.com.br]</a></div>
-        
-        <div class="footer-disclaimer">
-            Este produto não substitui acompanhamento médico
+    <footer>
+        <div class="container">
+            <h4 style="color: white; margin-bottom: 15px; font-size: 1.2rem;">AppAutoHipnose</h4>
+            <p>CNPJ: 40.678.175/0001-77</p>
+            <p>Responsável: Hipnoterapeuta Alex Andreoli Dantas</p>
+            <p>WhatsApp: (19) 97401-0028</p>
+            <p style="margin-bottom: 20px;">E-mail: contato@appestoicismo.com.br</p>
+            
+            <div style="border-top: 1px solid #334155; margin-top: 30px; padding-top: 20px; font-size: 0.8rem;">
+                <p>Este produto não substitui o parecer médico profissional. Sempre consulte um médico para tratar de assuntos relativos à saúde.</p>
+                <p style="margin-top: 10px;">&copy; 2023 Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sticky-cta">
+        <a href="https://pay.hotmart.com/E101811999C?off=tzbt6j59&checkoutMode=10" class="btn-cta" style="font-size: 1rem; padding: 15px;" onclick="fbq('track', 'InitiateCheckout');">
+            <span class="btn-text" style="font-size: 1.1rem;">Quero Dormir Hoje ➔</span>
+        </a>
+    </div>
+
+</body>
+</html>
