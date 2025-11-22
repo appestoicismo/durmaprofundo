@@ -51,7 +51,7 @@
             overflow-x: hidden;
         }
 
-        img { max-width: 100%; height: auto; display: block; }
+        img, video { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; }
 
         /* --- Utilitários --- */
@@ -68,12 +68,10 @@
 
         /* --- Header / Hero Section (Dark Mode com Imagem) --- */
         header {
-            /* Fundo de fallback caso a imagem não carregue */
             background-color: #0f172a;
-            /* Duas camadas: um gradiente escuro por cima da imagem para garantir contraste do texto */
             background-image: 
                 linear-gradient(to bottom, rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.95)),
-                url('https://images.unsplash.com/photo-1503435400439-986e0b2ba603?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'); /* Imagem de lua/noite */
+                url('https://images.unsplash.com/photo-1503435400439-986e0b2ba603?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');
             background-size: cover;
             background-position: center center;
             color: var(--text-light);
@@ -105,14 +103,13 @@
             line-height: 1.1;
             font-weight: 800;
             margin-bottom: 20px;
-            /* Texto branco sólido para máximo contraste com o fundo estrelado */
             color: #ffffff; 
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .sub-headline {
             font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.9); /* Branco com leve transparência */
+            color: rgba(255, 255, 255, 0.9);
             max-width: 700px;
             margin: 0 auto 30px;
             font-weight: 400;
@@ -128,7 +125,7 @@
 
         /* --- Card Principal de Conteúdo --- */
         .main-content {
-            margin-top: -50px; /* Efeito de sobreposição */
+            margin-top: -50px;
             position: relative;
             z-index: 10;
             padding-bottom: 40px;
@@ -206,21 +203,13 @@
             overflow: hidden;
         }
 
-        .app-showcase img {
-            border-radius: 16px;
-            border: 6px solid #334155;
-            box-shadow: 0 0 50px rgba(59, 130, 246, 0.3);
-            margin: 20px auto;
-            max-width: 100%;
-            width: 500px;
-        }
-
-        /* --- Offer Card (Godfather Offer) --- */
+        /* --- Offer Card (CORRIGIDO) --- */
         .offer-card {
             border: 2px solid var(--accent);
             background: linear-gradient(to bottom, #ffffff, #fffbeb);
             border-radius: 24px;
-            padding: 40px 30px;
+            /* AUMENTADO padding-top para 85px para evitar sobreposição da bolinha no celular */
+            padding: 85px 30px 40px;
             text-align: center;
             position: relative;
             margin-top: 20px;
@@ -240,6 +229,8 @@
             font-size: 0.9rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-transform: uppercase;
+            width: max-content;
+            max-width: 90%;
         }
 
         .price-container { margin: 25px 0; }
@@ -432,16 +423,17 @@
                 </div>
 
                 <div class="app-showcase">
-    <h3 style="font-family: var(--font-head); margin-bottom: 10px; font-size: 1.5rem;">Veja o Aplicativo Por Dentro</h3>
-    <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">Interface simples. Aperte o play, bloqueie a tela e durma.</p>
-    
-    <video controls playsinline preload="metadata" 
-           style="width: 100%; max-width: 500px; border-radius: 16px; border: 6px solid #334155; box-shadow: 0 0 50px rgba(59, 130, 246, 0.3); display: block; margin: 20px auto;">
-        <source src="https://durmaprofundo.dantashipnoterapia.com.br/apppordentro.mp4" type="video/mp4">
-        Seu navegador não suporta a reprodução deste vídeo.
-    </video>
-    <p style="margin-top: 20px; font-weight: 600; color: #ffffff;">Funciona mesmo se você nunca fez hipnose.</p>
-</div>
+                    <h3 style="font-family: var(--font-head); margin-bottom: 10px; font-size: 1.5rem;">Veja o Aplicativo Por Dentro</h3>
+                    <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">Interface simples. Aperte o play, bloqueie a tela e durma.</p>
+                    
+                    <video controls playsinline preload="metadata" 
+                           style="width: 100%; max-width: 500px; border-radius: 16px; border: 6px solid #334155; box-shadow: 0 0 50px rgba(59, 130, 246, 0.3); display: block; margin: 20px auto;">
+                        <source src="https://durmaprofundo.dantashipnoterapia.com.br/apppordentro.mp4" type="video/mp4">
+                        Seu navegador não suporta a reprodução deste vídeo.
+                    </video>
+
+                    <p style="margin-top: 20px; font-weight: 600; color: #ffffff;">Funciona mesmo se você nunca fez hipnose.</p>
+                </div>
 
                 <div class="offer-card" id="oferta">
                     <div class="badge">Oferta Por Tempo Limitado</div>
